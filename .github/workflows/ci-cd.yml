@@ -1,0 +1,163 @@
+name: CONSTRUCTIQ CI/CD
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test-backend:
+    runs-on: ubuntu-latest
+    
+    services:
+      postgres:
+        image: postgis/postgis:15-3.3
+        env:
+          POSTGRES_DB: constructiq_test
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.2'
+        extensions: pdo, pdo_pgsql, mbstring, xml, bcmath
+        
+    - name: Install Backend Dependencies
+      working-directory: ./backend-api
+      run: composer install --prefer-dist --no-progress
+      
+    - name: Run Backend Tests
+      working-directory: ./backend-api
+      run: php artisan test
+      env:
+        DB_CONNECTION: pgsql
+        DB_HOST: localhost
+        DB_PORT: 5432
+        DB_DATABASE: constructiq_test
+        DB_USERNAME: postgres
+        DB_PASSWORD: postgres
+
+  test-ai-engine:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install AI Engine Dependencies
+      working-directory: ./ai-engine
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest pytest-cov
+        
+    - name: Run AI Engine Tests
+      working-directory: ./ai-engine
+      run: pytest --cov=. --cov-report=xml
+
+  test-dashboard:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: ./web-dashboard/package-lock.json
+        
+    - name: Install Dashboard Dependencies
+      working-directory: ./web-dashboard
+      run: npm ci
+      
+    - name: Lint Dashboard
+      working-directory: ./web-dashboard
+      run: npm run lint
+      
+    - name: Build Dashboard
+      working-directory: ./web-dashboard
+      run: npm run build
+
+  build-and-push:
+    needs: [test-backend, test-ai-engine, test-dashboard]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+      
+    - name: Login to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        
+    - name: Build and Push Backend API
+      uses: docker/build-push-action@v4
+      with:
+        context: ./backend-api
+        push: true
+        tags: ${{ secrets.DOCKER_USERNAME }}/constructiq-backend:latest
+        
+    - name: Build and Push AI Engine
+      uses: docker/build-push-action@v4
+      with:
+        context: ./ai-engine
+        push: true
+        tags: ${{ secrets.DOCKER_USERNAME }}/constructiq-ai:latest
+        
+    - name: Build and Push IoT Gateway
+      uses: docker/build-push-action@v4
+      with:
+        context: ./iot-gateway
+        push: true
+        tags: ${{ secrets.DOCKER_USERNAME }}/constructiq-iot:latest
+        
+    - name: Build and Push Web Dashboard
+      uses: docker/build-push-action@v4
+      with:
+        context: ./web-dashboard
+        push: true
+        tags: ${{ secrets.DOCKER_USERNAME }}/constructiq-dashboard:latest
+
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Deploy to Production
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.DEPLOY_HOST }}
+        username: ${{ secrets.DEPLOY_USER }}
+        key: ${{ secrets.DEPLOY_KEY }}
+        script: |
+          cd /opt/constructiq
+          docker-compose pull
+          docker-compose up -d
+          docker-compose exec -T backend-api php artisan migrate --force
+
