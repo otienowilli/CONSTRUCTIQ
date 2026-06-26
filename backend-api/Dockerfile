@@ -9,8 +9,7 @@ RUN apt-get update && apt-get install -y \
     libxml2-dev \
     libpq-dev \
     zip \
-    unzip \
-    nginx
+    unzip
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -34,18 +33,14 @@ COPY . /var/www/html
 RUN composer install --no-dev --optimize-autoloader
 
 # Set permissions
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+RUN chown -R www-data:www-data /var/www/html
 
-# Copy nginx configuration
-COPY docker/nginx.conf /etc/nginx/sites-available/default
+# Expose port 9000 for PHP-FPM
+EXPOSE 9000
 
-# Expose port 8000
-EXPOSE 8000
-
-# Start PHP-FPM and Nginx
+# Start PHP-FPM with Laravel setup
 CMD php artisan migrate --force && \
     php artisan config:cache && \
     php artisan route:cache && \
-    php-fpm -D && \
-    nginx -g 'daemon off;'
+    php artisan serve --host=0.0.0.0 --port=8000
 

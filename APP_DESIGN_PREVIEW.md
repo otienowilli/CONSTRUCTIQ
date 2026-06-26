@@ -1,0 +1,652 @@
+# 📱 CONSTRUCTIQ Mobile App - Design Preview
+
+## 🎨 Visual Mockups & UI Design
+
+---
+
+## 1. 🚀 Splash Screen & Onboarding
+
+### **Splash Screen**
+```
+╔════════════════════════╗
+║                        ║
+║                        ║
+║       [Logo Icon]      ║
+║                        ║
+║     CONSTRUCTIQ        ║
+║                        ║
+║   Smart Construction   ║
+║      Intelligence      ║
+║                        ║
+║    [Loading dots...]   ║
+║                        ║
+║                        ║
+╚════════════════════════╝
+```
+
+### **Onboarding Slides (3 screens)**
+```
+┌────────────────────────┐
+│  [Skip]          [1/3] │
+├────────────────────────┤
+│                        │
+│    [Illustration]      │
+│   📊 Material Calc     │
+│                        │
+│  Calculate Materials   │
+│    in Real-Time        │
+│                        │
+│  Calculate concrete,   │
+│  bitumen, asphalt and  │
+│  more with precision   │
+│                        │
+│    ●  ○  ○            │
+│                        │
+│       [Next →]         │
+└────────────────────────┘
+```
+
+---
+
+## 2. 🔐 Authentication Screens
+
+### **Login Screen**
+```
+┌────────────────────────┐
+│                        │
+│      [Logo]            │
+│   CONSTRUCTIQ          │
+│                        │
+│  Welcome Back!         │
+│  Sign in to continue   │
+│                        │
+│  ┌──────────────────┐  │
+│  │ 📧 Email         │  │
+│  └──────────────────┘  │
+│                        │
+│  ┌──────────────────┐  │
+│  │ 🔒 Password      │  │
+│  └──────────────────┘  │
+│                        │
+│  ☐ Remember me         │
+│         Forgot? →      │
+│                        │
+│  ┌──────────────────┐  │
+│  │    LOGIN  🔓     │  │
+│  └──────────────────┘  │
+│                        │
+│  Don't have account?   │
+│      Sign Up →         │
+│                        │
+│  ─── or login with ─── │
+│  [G] [F] [Apple]       │
+└────────────────────────┘
+```
+
+### **Register Screen**
+```
+┌────────────────────────┐
+│  [← Back]              │
+│                        │
+│  Create Account        │
+│  Start your journey    │
+│                        │
+│  ┌──────────────────┐  │
+│  │ 👤 Full Name     │  │
+│  └──────────────────┘  │
+│  ┌──────────────────┐  │
+│  │ 📧 Email         │  │
+│  └──────────────────┘  │
+│  ┌──────────────────┐  │
+│  │ 📱 Phone         │  │
+│  └──────────────────┘  │
+│  ┌──────────────────┐  │
+│  │ 💼 Role ▼        │  │
+│  └──────────────────┘  │
+│  ┌──────────────────┐  │
+│  │ 🔒 Password      │  │
+│  └──────────────────┘  │
+│  ┌──────────────────┐  │
+│  │ 🔒 Confirm Pass  │  │
+│  └──────────────────┘  │
+│                        │
+│  ☑ I agree to Terms    │
+│                        │
+│  ┌──────────────────┐  │
+│  │   SIGN UP  ✓     │  │
+│  └──────────────────┘  │
+└────────────────────────┘
+```
+
+---
+
+## 3. 🏠 Home Dashboard
+
+### **Main Dashboard**
+```
+┌────────────────────────┐
+│  CONSTRUCTIQ    🔔 ⚙️  │
+├────────────────────────┤
+│  Hello, John! 👋       │
+│  Site Manager          │
+│                        │
+│  ┌──────────────────┐  │
+│  │ 📍 Current Site  │  │
+│  │ Nairobi Highway  │  │
+│  │ View Map →       │  │
+│  └──────────────────┘  │
+│                        │
+│  Quick Actions         │
+│  ┌────┐ ┌────┐ ┌────┐ │
+│  │📊 │ │🔧 │ │📷 │ │
+│  │Cal│ │Mac│ │Cam│ │
+│  └────┘ └────┘ └────┘ │
+│  ┌────┐ ┌────┐ ┌────┐ │
+│  │📍 │ │📄 │ │💬 │ │
+│  │Map│ │Rep│ │Bot│ │
+│  └────┘ └────┘ └────┘ │
+│                        │
+│  Active Projects (3)   │
+│  ┌──────────────────┐  │
+│  │ 🏗️ Bridge Const. │  │
+│  │ 65% ▓▓▓▓▓░░░     │  │
+│  │ Due: 12 days     │  │
+│  └──────────────────┘  │
+│  ┌──────────────────┐  │
+│  │ 🛣️ Road Paving   │  │
+│  │ 82% ▓▓▓▓▓▓▓▓░░   │  │
+│  │ Due: 5 days      │  │
+│  └──────────────────┘  │
+│                        │
+│ [Home] [Proj] [+] [Calc] [Me] │
+└────────────────────────┘
+```
+
+---
+
+## 4. 📊 Material Calculators
+
+### **Calculator List**
+```
+┌────────────────────────┐
+│  [← Back]  Calculators │
+├────────────────────────┤
+│  Search calculators... │
+│                        │
+│  ┌──────────────────┐  │
+│  │ 🏗️ CONCRETE      │  │
+│  │ Calculate volume │  │
+│  │ and materials    │  │
+│  └──────────────────┘  │
+│                        │
+│  ┌──────────────────┐  │
+│  │ 🛣️ BITUMEN  NEW! │  │
+│  │ Application rate │  │
+│  │ calculator       │  │
+│  └──────────────────┘  │
+│                        │
+│  ┌──────────────────┐  │
+│  │ 🛣️ ASPHALT  NEW! │  │
+│  │ Weight & volume  │  │
+│  │ conversion       │  │
+│  └──────────────────┘  │
+│                        │
+│  ┌──────────────────┐  │
+│  │ 📐 GEOTEXTILE    │  │
+│  │ Area with        │  │
+│  │ overlap calc     │  │
+│  └──────────────────┘  │
+│                        │
+│  ┌──────────────────┐  │
+│  │ 🧱 BRICKWORK     │  │
+│  └──────────────────┘  │
+└────────────────────────┘
+```
+
+### **Bitumen Calculator (Example)**
+```
+┌────────────────────────┐
+│  [← Back] Bitumen Calc │
+├────────────────────────┤
+│                        │
+│  🛣️ Bitumen Calculator │
+│                        │
+│  Road Dimensions       │
+│  ┌──────────────────┐  │
+│  │ Length (m)       │  │
+│  │ 100              │  │
+│  └──────────────────┘  │
+│  ┌──────────────────┐  │
+│  │ Width (m)        │  │
+│  │ 10               │  │
+│  └──────────────────┘  │
+│                        │
+│  Bitumen Type          │
+│  ┌──────────────────┐  │
+│  │ 80/100 ▼         │  │
+│  └──────────────────┘  │
+│                        │
+│  Layer Thickness       │
+│  ┌──────────────────┐  │
+│  │ 0.05 m           │  │
+│  └──────────────────┘  │
+│                        │
+│  ┌──────────────────┐  │
+│  │  CALCULATE 🔢    │  │
+│  └──────────────────┘  │
+│                        │
+│  ━━━━ RESULTS ━━━━    │
+│                        │
+│  Area: 1,000 m²        │
+│  Bitumen: 1,200 L      │
+│  With Wastage: 1,260 L │
+│  Cost: KES 119,700     │
+│                        │
+│  [Save] [Share] [PDF]  │
+└────────────────────────┘
+```
+
+---
+
+## 5. 🔧 Machine Control
+
+### **Machines Dashboard**
+```
+┌────────────────────────┐
+│  Machines & IoT  🔔    │
+├────────────────────────┤
+│                        │
+│  ┌──────────────────┐  │
+│  │ 🟢 ONLINE (4)    │  │
+│  │ 🔴 OFFLINE (2)   │  │
+│  └──────────────────┘  │
+│                        │
+│  Active Machines       │
+│                        │
+│  ┌──────────────────┐  │
+│  │ 🏗️ Batching Plant│  │
+│  │ Status: 🟢 RUNNING│ │
+│  │ Output: 45 m³/h  │  │
+│  │ [Control →]      │  │
+│  └──────────────────┘  │
+│                        │
+│  ┌──────────────────┐  │
+│  │ 🚜 Asphalt Mixer │  │
+│  │ Status: 🟢 RUNNING│ │
+│  │ Temp: 165°C      │  │
+│  │ [Control →]      │  │
+│  └──────────────────┘  │
+│                        │
+│  ┌──────────────────┐  │
+│  │ 🚛 Roller M3     │  │
+│  │ Status: ⏸️ PAUSED │  │
+│  │ Location: GPS    │  │
+│  │ [Control →]      │  │
+│  └──────────────────┘  │
+│                        │
+└────────────────────────┘
+```
+
+### **Machine Control Panel**
+```
+┌────────────────────────┐
+│  [← Back] Asphalt Mixer│
+├────────────────────────┤
+│                        │
+│       [Machine Icon]   │
+│    Asphalt Mixer #2    │
+│                        │
+│  Status: 🟢 RUNNING    │
+│  Uptime: 4h 23m        │
+│                        │
+│  ━━━ Live Sensors ━━━  │
+│                        │
+│  🌡️ Temperature        │
+│  ▓▓▓▓▓▓▓▓░░ 165°C     │
+│                        │
+│  ⚡ Power               │
+│  ▓▓▓▓▓▓░░░░ 68%       │
+│                        │
+│  📊 Output              │
+│  ▓▓▓▓▓▓▓░░░ 38 m³/h   │
+│                        │
+│  ━━━ Controls ━━━━     │
+│                        │
+│  ┌────┐ ┌────┐ ┌────┐ │
+│  │▶️  │ │⏸️  │ │⏹️  │ │
+│  │RUN│ │PAUS│ │STOP│ │
+│  └────┘ └────┘ └────┘ │
+│                        │
+│  ┌──────────────────┐  │
+│  │ 🚨 EMERGENCY     │  │
+│  │    STOP          │  │
+│  └──────────────────┘  │
+│                        │
+│  Command History (5)   │
+│  • START - 4h ago      │
+│  • PAUSE - 2h ago      │
+│  • RESUME - 1h ago     │
+└────────────────────────┘
+```
+
+---
+
+## 6. 📍 Maps & GPS
+
+### **Site Map View**
+```
+┌────────────────────────┐
+│  [← Back]  Site Map 🛰️ │
+├────────────────────────┤
+│                        │
+│  ┌──────────────────┐  │
+│  │                  │  │
+│  │   [Google Map]   │  │
+│  │                  │  │
+│  │   📍 You         │  │
+│  │                  │  │
+│  │   🏗️ Site        │  │
+│  │                  │  │
+│  │   🚜 Machines    │  │
+│  │                  │  │
+│  └──────────────────┘  │
+│                        │
+│  Current Location      │
+│  Lat: -1.286389        │
+│  Lng: 36.817223        │
+│  Altitude: 1,670m      │
+│                        │
+│  [📏 Measure]          │
+│  [📍 Mark Site]        │
+│  [🗺️ Offline Maps]    │
+│                        │
+│  Nearby Sites (2)      │
+│  • Highway - 2.3 km    │
+│  • Bridge - 5.1 km     │
+└────────────────────────┘
+```
+
+---
+
+## 7. 📷 Camera & Analysis
+
+### **Camera Capture**
+```
+┌────────────────────────┐
+│  [✕] Camera      [⚙️]  │
+├────────────────────────┤
+│                        │
+│  ┌──────────────────┐  │
+│  │                  │  │
+│  │                  │  │
+│  │   [Viewfinder]   │  │
+│  │                  │  │
+│  │      [Grid]      │  │
+│  │                  │  │
+│  │   📍 GPS Tagged  │  │
+│  │                  │  │
+│  └──────────────────┘  │
+│                        │
+│  [Flash] [HDR] [Timer] │
+│                        │
+│       ┌──────┐         │
+│       │  📸  │         │
+│       └──────┘         │
+│                        │
+│  [Gallery]    [Switch] │
+└────────────────────────┘
+```
+
+### **AI Soil Analysis**
+```
+┌────────────────────────┐
+│  [← Back] Soil Analysis│
+├────────────────────────┤
+│                        │
+│  ┌──────────────────┐  │
+│  │   [Soil Photo]   │  │
+│  │                  │  │
+│  └──────────────────┘  │
+│                        │
+│  🤖 AI Analysis        │
+│  Analyzing...          │
+│  ▓▓▓▓▓▓▓░░░ 75%       │
+│                        │
+│  ━━━━ RESULTS ━━━━    │
+│                        │
+│  Soil Type:            │
+│  🟤 Sandy Loam         │
+│                        │
+│  Composition:          │
+│  • Sand: 65%           │
+│  • Silt: 25%           │
+│  • Clay: 10%           │
+│                        │
+│  Properties:           │
+│  • pH: 6.8 (Neutral)   │
+│  • Moisture: 18%       │
+│  • Density: 1.6 g/cm³  │
+│                        │
+│  Recommended Use:      │
+│  ✅ Road Construction  │
+│  ✅ Foundation         │
+│  ⚠️ Requires compaction│
+│                        │
+│  [Save Report] [Share] │
+└────────────────────────┘
+```
+
+---
+
+## 8. 💬 AI Chatbot
+
+### **Chatbot Interface**
+```
+┌────────────────────────┐
+│  [← Back] AI Assistant │
+├────────────────────────┤
+│                        │
+│  🤖 ConstructIQ AI     │
+│  Online • Typing...    │
+│                        │
+│  ┌──────────────────┐  │
+│  │ Hello! How can I │  │
+│  │ help you today?  │  │
+│  └──────────────────┘  │
+│         [10:30 AM]     │
+│                        │
+│         ┌────────────┐ │
+│         │ I need to  │ │
+│         │ calculate  │ │
+│         │ concrete   │ │
+│         └────────────┘ │
+│         [10:31 AM]     │
+│                        │
+│  ┌──────────────────┐  │
+│  │ Sure! I can help │  │
+│  │ with that. What  │  │
+│  │ are dimensions?  │  │
+│  └──────────────────┘  │
+│         [10:31 AM]     │
+│                        │
+│  Quick Suggestions:    │
+│  [Calculate Material]  │
+│  [Find Machine]        │
+│  [Site Help]           │
+│                        │
+│ ┌────────────────────┐ │
+│ │ Type message...  🎤││
+│ └────────────────────┘ │
+└────────────────────────┘
+```
+
+---
+
+## 9. 📊 Reports & Analytics
+
+### **Reports Dashboard**
+```
+┌────────────────────────┐
+│  Reports & Analytics   │
+├────────────────────────┤
+│                        │
+│  This Month            │
+│  ┌──────────────────┐  │
+│  │ 📊 45 Calcs      │  │
+│  │ 📍 12 Sites      │  │
+│  │ 🔧 8 Machines    │  │
+│  └──────────────────┘  │
+│                        │
+│  Material Usage        │
+│  ┌──────────────────┐  │
+│  │     [Chart]      │  │
+│  │  ▃▅█▆▃▅▇▄       │  │
+│  └──────────────────┘  │
+│                        │
+│  Recent Reports        │
+│  ┌──────────────────┐  │
+│  │ 📄 Highway Proj  │  │
+│  │ Material Est.    │  │
+│  │ 2 days ago       │  │
+│  │ [View] [Export]  │  │
+│  └──────────────────┘  │
+│                        │
+│  ┌──────────────────┐  │
+│  │ 📄 Bridge Const  │  │
+│  │ Weekly Summary   │  │
+│  │ 5 days ago       │  │
+│  │ [View] [Export]  │  │
+│  └──────────────────┘  │
+│                        │
+│  [+ New Report]        │
+└────────────────────────┘
+```
+
+---
+
+## 10. ⚙️ Settings & Profile
+
+### **Profile Screen**
+```
+┌────────────────────────┐
+│  [← Back] Profile      │
+├────────────────────────┤
+│                        │
+│      [👤 Avatar]       │
+│    John Otieno         │
+│   Site Engineer        │
+│  john@construct.com    │
+│                        │
+│  Account Settings      │
+│  ┌──────────────────┐  │
+│  │ 👤 Edit Profile  │→│
+│  └──────────────────┘  │
+│  ┌──────────────────┐  │
+│  │ 🔒 Security      │→│
+│  └──────────────────┘  │
+│  ┌──────────────────┐  │
+│  │ 🔔 Notifications │→│
+│  └──────────────────┘  │
+│                        │
+│  Preferences           │
+│  ┌──────────────────┐  │
+│  │ 🌙 Dark Mode [✓]│  │
+│  └──────────────────┘  │
+│  ┌──────────────────┐  │
+│  │ 📴 Offline Mode  │→│
+│  └──────────────────┘  │
+│  ┌──────────────────┐  │
+│  │ 🌍 Language: EN  │→│
+│  └──────────────────┘  │
+│                        │
+│  Support               │
+│  ┌──────────────────┐  │
+│  │ 📚 Help Center   │→│
+│  └──────────────────┘  │
+│  ┌──────────────────┐  │
+│  │ 📞 Contact       │→│
+│  └──────────────────┘  │
+│                        │
+│  [🚪 Logout]           │
+└────────────────────────┘
+```
+
+---
+
+## 🎨 Color Scheme & Branding
+
+```
+PRIMARY COLORS:
+🔵 Blue: #1E88E5 (Main brand color)
+🟠 Orange: #FFA726 (Accent color)
+⚫ Dark: #212121 (Text)
+⚪ Light: #FAFAFA (Background)
+
+SEMANTIC COLORS:
+🟢 Success: #4CAF50
+🔴 Error: #F44336
+🟡 Warning: #FFC107
+🔵 Info: #2196F3
+
+GRADIENTS:
+🌅 Primary: #1E88E5 → #1565C0
+🌄 Accent: #FFA726 → #FF6F00
+```
+
+---
+
+## 📱 Bottom Navigation
+
+```
+┌────────────────────────┐
+│                        │
+│     [Screen Content]   │
+│                        │
+├────────────────────────┤
+│  🏠      📊     ➕      │
+│ Home   Calc   Add      │
+│                        │
+│  🔧      👤            │
+│ Machines  Me           │
+└────────────────────────┘
+```
+
+---
+
+## ✨ Special Features UI
+
+### **Offline Mode Indicator**
+```
+┌────────────────────────┐
+│  📴 Working Offline    │
+│  Syncing when online...│
+└────────────────────────┘
+```
+
+### **GPS Accuracy**
+```
+High: 🟢 ±2m
+Medium: 🟡 ±10m
+Low: 🔴 ±50m
+```
+
+### **Slope Measurement**
+```
+┌────────────────────────┐
+│  Slope Meter           │
+│                        │
+│       ╱╲               │
+│      ╱  ╲  15.3°       │
+│     ╱____╲             │
+│                        │
+│  Slope: 27.4%          │
+│  Angle: 15.3°          │
+│  [Hold Steady...]      │
+└────────────────────────┘
+```
+
+---
+
+**This is what your CONSTRUCTIQ mobile app will look like! 🎨✨**
+
+Modern, professional, and ready for the app stores! 📱

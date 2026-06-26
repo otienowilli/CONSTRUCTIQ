@@ -1,279 +1,221 @@
-# CONSTRUCTIQ Mobile App (Android)
+# 📱 CONSTRUCTIQ Mobile App
 
-Native Android application for CONSTRUCTIQ construction management platform.
+AI-powered construction field intelligence and smart material optimization platform for iOS and Android.
 
-## Features
+## ✨ Features
 
-- ✅ **Offline-First Architecture** - Works without internet connection
-- ✅ **GPS Integration** - Automatic location tracking
-- ✅ **Camera Integration** - Capture site photos
-- ✅ **Material Calculator** - All 7 calculation types
-- ✅ **Project Management** - Create and manage projects
-- ✅ **Site Analysis** - Upload and analyze site images
-- ✅ **AI Chatbot** - Get construction guidance
-- ✅ **Background Sync** - Automatic data synchronization
-- ✅ **Real-time Updates** - Live project updates
+### 🔐 **Authentication & User Management**
+- Secure login/register with JWT tokens
+- Role-based access (Admin, Engineer, Contractor, Worker)
+- Biometric authentication (Face ID, Touch ID, Fingerprint)
+- Password reset and account management
 
-## Tech Stack
+### 📊 **Material Calculators (10 Types)**
+1. **Concrete Calculator** - Volume, bags of cement, aggregates
+2. **Bitumen Calculator** - Application rates, wastage
+3. **Asphalt Calculator** - Weight/volume conversion
+4. **Geotextile Calculator** - Area with overlap
+5. **Brickwork Calculator** - Bricks, mortar required
+6. **Plastering Calculator** - Cement, sand quantities
+7. **Painting Calculator** - Paint, primer required
+8. **Excavation Calculator** - Volume, trucking
+9. **Road Calculator** - Sub-base, base course
+10. **Roofing Calculator** - Sheets, tiles, accessories
 
-- **Language**: Kotlin
-- **UI**: Jetpack Compose
-- **Architecture**: MVVM + Clean Architecture
-- **Database**: Room (SQLite)
-- **Networking**: Retrofit + OkHttp
-- **DI**: Hilt/Dagger
-- **Location**: Google Play Services
-- **Camera**: CameraX
-- **Background Work**: WorkManager
-- **Maps**: Google Maps SDK
+### 📍 **GPS & Mapping**
+- Real-time location tracking
+- Google Maps integration
+- Site marking and boundaries
+- Offline maps support
+- Distance and area measurement
 
-## Prerequisites
+### 📷 **Camera & Image Analysis**
+- Capture site photos with GPS tagging
+- AI soil type detection
+- Image-based material identification
+- Before/after photo comparison
+- Photo gallery and organization
 
-- Android Studio Hedgehog (2023.1.1) or later
-- JDK 17
-- Android SDK 34
-- Minimum Android version: 7.0 (API 24)
-- Target Android version: 14 (API 34)
+### 🎚️ **Sensors & Measurements**
+- Slope measurement (accelerometer/gyroscope)
+- Level detection
+- Distance calculation
+- Automatic measurements
 
-## Setup
+### 🔧 **IoT & Machine Control**
+- Real-time sensor monitoring (14 types)
+- Remote machine control (Start/Stop/Pause)
+- Live data visualization
+- Machine status dashboard
+- Alert notifications
 
-### 1. Clone Repository
+### 💬 **AI Chatbot Assistant**
+- Construction guidance
+- Material recommendations
+- Problem solving
+- Voice commands (optional)
 
-```bash
-git clone https://github.com/your-org/constructiq.git
-cd constructiq/mobile-app
-```
+### 📴 **Offline Mode**
+- Work without internet
+- Local SQLite database
+- Automatic background sync
+- Queue offline actions
 
-### 2. Configure API URLs
+### 📄 **Reports & Export**
+- Generate PDF reports
+- Material cost estimates
+- Project summaries
+- Export to email/cloud
 
-Edit `app/build.gradle`:
+## 🛠 Tech Stack
 
-```gradle
-buildConfigField "String", "API_URL", "\"http://your-server:8000/api\""
-buildConfigField "String", "AI_ENGINE_URL", "\"http://your-server:8001\""
-```
+- **Framework**: Flutter 3.x
+- **Language**: Dart
+- **State Management**: Provider + BLoC
+- **Local Database**: SQLite + Hive
+- **API**: REST (Laravel backend)
+- **Maps**: Google Maps API
+- **Notifications**: Firebase Cloud Messaging
+- **Analytics**: Firebase Analytics
 
-For local development (emulator):
-- Use `http://10.0.2.2:8000/api` for localhost
-
-### 3. Add Google Maps API Key
-
-1. Get API key from [Google Cloud Console](https://console.cloud.google.com/)
-2. Edit `app/src/main/AndroidManifest.xml`:
-
-```xml
-<meta-data
-    android:name="com.google.android.geo.API_KEY"
-    android:value="YOUR_GOOGLE_MAPS_API_KEY" />
-```
-
-### 4. Build and Run
-
-```bash
-# Open in Android Studio
-# OR use command line:
-
-# Debug build
-./gradlew assembleDebug
-
-# Release build
-./gradlew assembleRelease
-
-# Install on device
-./gradlew installDebug
-```
-
-## Project Structure
+## 📁 Project Structure
 
 ```
-mobile-app/
+lib/
+├── main.dart                 # App entry point
 ├── app/
-│   ├── src/
-│   │   ├── main/
-│   │   │   ├── java/com/constructiq/
-│   │   │   │   ├── data/          # Data layer
-│   │   │   │   │   ├── local/     # Room database
-│   │   │   │   │   ├── remote/    # API services
-│   │   │   │   │   └── repository/
-│   │   │   │   ├── domain/        # Business logic
-│   │   │   │   │   ├── model/
-│   │   │   │   │   └── usecase/
-│   │   │   │   ├── presentation/  # UI layer
-│   │   │   │   │   ├── screens/
-│   │   │   │   │   ├── components/
-│   │   │   │   │   └── viewmodel/
-│   │   │   │   └── util/          # Utilities
-│   │   │   ├── res/               # Resources
-│   │   │   └── AndroidManifest.xml
-│   │   └── test/                  # Unit tests
-│   └── build.gradle
-├── build.gradle
-└── settings.gradle
+│   ├── app.dart             # Main app widget
+│   ├── routes.dart          # Navigation routes
+│   ├── providers/           # State management
+│   ├── screens/             # UI screens
+│   └── widgets/             # Reusable widgets
+├── core/
+│   ├── config/              # App configuration
+│   ├── constants/           # Constants & enums
+│   ├── services/            # API, Storage, Location
+│   ├── models/              # Data models
+│   └── utils/               # Helper functions
+└── features/
+    ├── auth/                # Authentication
+    ├── calculators/         # Material calculators
+    ├── projects/            # Project management
+    ├── machines/            # Machine control
+    ├── maps/                # Maps & GPS
+    └── reports/             # Reports & export
 ```
 
-## Key Features Implementation
+## 🚀 Getting Started
 
-### Offline-First
+### Prerequisites
 
-- Room database stores all data locally
-- WorkManager syncs data when online
-- Conflict resolution for concurrent edits
+- Flutter SDK (3.0+)
+- Android Studio / Xcode
+- Google Maps API key
+- Backend API URL
 
-### GPS Integration
-
-```kotlin
-// Location tracking
-val locationManager = LocationManager(context)
-locationManager.getCurrentLocation { location ->
-    // Use location
-}
-```
-
-### Camera Integration
-
-```kotlin
-// Capture photo
-CameraScreen(
-    onPhotoCaptured = { uri ->
-        // Process photo
-    }
-)
-```
-
-### Material Calculator
-
-All 7 calculation types available offline:
-- Concrete
-- Brickwork
-- Plastering
-- Painting
-- Excavation
-- Road Construction
-- Roofing
-
-## Building for Release
-
-### 1. Generate Keystore
+### Installation
 
 ```bash
-keytool -genkey -v -keystore constructiq.keystore \
-  -alias constructiq -keyalg RSA -keysize 2048 -validity 10000
+# Install dependencies
+flutter pub get
+
+# Run on Android
+flutter run
+
+# Run on iOS
+flutter run
+
+# Build APK (Android)
+flutter build apk --release
+
+# Build IPA (iOS)
+flutter build ios --release
 ```
 
-### 2. Configure Signing
+### Configuration
 
-Create `keystore.properties`:
+1. **API Configuration**
+   - Edit `lib/core/config/api_config.dart`
+   - Set your backend API URL
 
-```properties
-storePassword=your_store_password
-keyPassword=your_key_password
-keyAlias=constructiq
-storeFile=../constructiq.keystore
-```
+2. **Google Maps**
+   - Add API key to `android/app/src/main/AndroidManifest.xml`
+   - Add API key to `ios/Runner/AppDelegate.swift`
 
-### 3. Build Release APK
+3. **Firebase** (Optional)
+   - Add `google-services.json` (Android)
+   - Add `GoogleService-Info.plist` (iOS)
 
-```bash
-./gradlew assembleRelease
-```
-
-APK location: `app/build/outputs/apk/release/app-release.apk`
-
-### 4. Build App Bundle (for Play Store)
-
-```bash
-./gradlew bundleRelease
-```
-
-Bundle location: `app/build/outputs/bundle/release/app-release.aab`
-
-## Testing
-
-### Unit Tests
-
-```bash
-./gradlew test
-```
-
-### Instrumented Tests
-
-```bash
-./gradlew connectedAndroidTest
-```
-
-### UI Tests
-
-```bash
-./gradlew connectedDebugAndroidTest
-```
-
-## Deployment
+## 📱 App Stores
 
 ### Google Play Store
+- Package: `com.constructiq.app`
+- Min SDK: 21 (Android 5.0)
+- Target SDK: 34 (Android 14)
 
-1. Create developer account
-2. Create app listing
-3. Upload app bundle
-4. Complete store listing
-5. Submit for review
+### Apple App Store
+- Bundle ID: `com.constructiq.app`
+- Min iOS: 12.0
+- Target iOS: 17.0
 
-### Direct Distribution
+## 🔑 Environment Variables
 
-1. Build release APK
-2. Enable "Unknown Sources" on device
-3. Transfer and install APK
+Create `.env` file:
+```
+API_BASE_URL=https://api.constructiq.com
+GOOGLE_MAPS_API_KEY=your_api_key_here
+FIREBASE_PROJECT_ID=your_project_id
+```
 
-## Troubleshooting
+## 🧪 Testing
 
-### Build Errors
+```bash
+# Run unit tests
+flutter test
 
-- Clean and rebuild: `./gradlew clean build`
-- Invalidate caches in Android Studio
-- Update Gradle and dependencies
+# Run integration tests
+flutter test integration_test
 
-### Network Issues
+# Code coverage
+flutter test --coverage
+```
 
-- Check API URLs in build.gradle
-- Verify server is running
-- Check device internet connection
-- For emulator, use `10.0.2.2` for localhost
+## 📦 Build & Deploy
 
-### Location Not Working
+### Android
+```bash
+# Generate signed APK
+flutter build apk --release
 
-- Enable location permissions
-- Check GPS is enabled
-- Test on physical device (emulator GPS is limited)
+# Generate App Bundle (for Play Store)
+flutter build appbundle --release
+```
 
-## Performance Optimization
+### iOS
+```bash
+# Generate IPA
+flutter build ios --release
 
-- Use ProGuard/R8 for code shrinking
-- Optimize images and resources
-- Implement pagination for large lists
-- Use lazy loading for images
-- Cache API responses
+# Open in Xcode for archiving
+open ios/Runner.xcworkspace
+```
 
-## Security
+## 🎨 Design System
 
-- API keys stored in BuildConfig (not in VCS)
-- HTTPS for all API calls
-- Encrypted local storage for sensitive data
-- Certificate pinning for production
+- **Primary Color**: #1E88E5 (Blue)
+- **Secondary Color**: #FFA726 (Orange)
+- **Font**: Poppins
+- **Design**: Material Design 3
 
-## Contributing
+## 📄 License
 
-1. Fork repository
-2. Create feature branch
-3. Make changes
-4. Write tests
-5. Submit pull request
+Proprietary - All rights reserved
 
-## License
+## 👥 Team
 
-MIT License
+CONSTRUCTIQ Development Team
 
-## Support
+## 📞 Support
 
 - Email: support@constructiq.com
-- Documentation: https://docs.constructiq.com
-- Issues: https://github.com/your-org/constructiq/issues
-
+- Website: https://constructiq.com
